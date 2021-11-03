@@ -1,0 +1,128 @@
+{
+  "snip1": {
+    "prefix": "query",
+    "body": [
+      "$.queryService.select(\"query_name\").eq(\"column\", \"\").findAll(); // 查询数据"
+    ],
+    "description": "query查询"
+  },
+  "snip11": {
+    "prefix": "find",
+    "body": [
+      "$.queryService.select(\"query_name\").eq(\"column\", \"\").find(); // 查询数据"
+    ],
+    "description": "query查询单条"
+  },
+  "snip12": {
+    "prefix": "findAll",
+    "body": [
+      "$.queryService.select(\"query_name\").eq(\"column\", \"\").findAll(); // 查询数据"
+    ],
+    "description": "query查询多条"
+  },
+  "snip2": {
+    "prefix": "sqlquery",
+    "body": [
+      "$.jdbcTemplate.queryForList(sql); // 查询数据"
+    ],
+    "description": "sql查询"
+  },
+  "snip3": {
+    "prefix": "insert",
+    "body": [
+      "$.queryService.insert(\"model\",map); // 插入数据"
+    ],
+    "description": "插入数据"
+  },
+  "snip4": {
+    "prefix": "insertbatch",
+    "body": [
+      "$.queryService.batchInsert(\"model\", array);// 批量插入数据"
+    ],
+    "description": "批量插入数据"
+  },
+  "snip5": {
+    "prefix": "update",
+    "body": [
+      "$.queryService.createUpdate(\"model\").eq(\"column\", value).set(\"id\", id).update();// 更新数据"
+    ],
+    "description": "更新数据"
+  },
+  "snip6": {
+    "prefix": "updatemap",
+    "body": [
+      "$.queryService.update(\"model\", map);// 更新map数据"
+    ],
+    "description": "更新map数据"
+  },
+  "snip7": {
+    "prefix": "updatebatch",
+    "body": [
+      "$.queryService.batchUpdate(\"model\", array, [\"column1\", \"column2\"]);// 批量更新数据"
+    ],
+    "description": "批量更新数据"
+  },
+  "snip8": {
+    "prefix": "foreach",
+    "body": [
+      "rows.forEach(function(row){\n\n});"
+    ],
+    "description": "foreach循环"
+  },
+  "snip9": {
+    "prefix": "delete",
+    "body": [
+      "$.queryService.delete(\"model\").eq(\"column\", value).execute();// 删除"
+    ],
+    "description": "删除"
+  },
+  "snip91": {
+    "prefix": "actions",
+    "body": [
+      "//action方法\nactions.actionExample = function ($, namespace, request, response) {\n  var actionData = request.body;\n  var rows = actionData.selectedRows;\n  rows.forEach(function (row) {\n\n      });\n  response.code = 'refresh';\n  response.message = '操作完成';\n}"
+    ],
+    "description": "action方法"
+  },
+  "snip921": {
+    "prefix": "tasks",
+    "body": [
+      "// 计划任务\ntasks.rateTaskTrip02 = function ($, taskContext) {\n    var lockService = $.getLockService();\n    var lock = lockService.getLock(taskContext.handlerName + \".lock\");\n    var lockOn = lock.tryLock(1800, java.util.concurrent.TimeUnit.SECONDS);\n    if (!lockOn) {\n        throw \"任务执行中,请等待任务执行完成！\";\n    }\n    try {\n\n    } catch (e) {\n        throw e;\n    } finally {\n        lock.unlock();\n    }\n};"
+    ],
+    "description": "计划任务"
+  },
+  "snip921b": {
+    "prefix": "计划任务",
+    "body": [
+      "// 计划任务\ntasks.rateTaskTrip02 = function ($, taskContext) {\n    var lockService = $.getLockService();\n    var lock = lockService.getLock(taskContext.handlerName + \".lock\");\n    var lockOn = lock.tryLock(1800, java.util.concurrent.TimeUnit.SECONDS);\n    if (!lockOn) {\n        throw \"任务执行中,请等待任务执行完成！\";\n    }\n    try {\n\n    } catch (e) {\n        throw e;\n    } finally {\n        lock.unlock();\n    }\n};"
+    ],
+    "description": "计划任务"
+  },
+  "snip931": {
+    "prefix": "redirect",
+    "body": [
+      "    var redirect = {\n        path: '/l/layout'\n    }\n    response.code = 'redirect';\n    response.data = redirect;\n    response.message = '操作完成';"
+    ],
+    "description": "指定跳转"
+  },
+  "snip931b": {
+    "prefix": "zhidingtiaoz",
+    "body": [
+      "    var redirect = {\n        path: '/l/layout'\n    }\n    response.code = 'redirect';\n    response.data = redirect;\n    response.message = '操作完成';"
+    ],
+    "description": "指定跳转"
+  },
+  "snip932": {
+    "prefix": "log",
+    "body": [
+      "   common.getLogger(\"***日志示例***\").info(\"msg\");"
+    ],
+    "description": "日志"
+  },
+  "snip932b": {
+    "prefix": "rizhi",
+    "body": [
+      "   common.getLogger(\"***日志示例***\").info(\"msg\");"
+    ],
+    "description": "日志"
+  }
+}

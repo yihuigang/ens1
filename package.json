@@ -1,0 +1,37 @@
+{
+    "name": "logwiresnip",
+    "displayName": "logwire代码片段",
+    "description": "logwire代码片段",
+    "version": "0.0.2",
+    "engines": {
+        "vscode": "^1.61.0"
+    },
+    "publisher":"yhg",
+    "categories": [
+        "Snippets"
+    ],
+    "icon": "images/icon2.png",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ],
+        "commands": [
+            {
+                "command": "extension.openUrl",
+                "title": "运匠"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "editorFocus",
+                    "command": "extension.openUrl",
+                    "group": "navigation"
+                }
+            ]
+        }
+    }
+}
