@@ -1,7 +1,7 @@
-# Change Log
+# 更新日志
 
+## 版本说明
 
-
-## [Unreleased]
-
-- Initial release
+- 0.1  20.09 支持js代码段
+- 0.2  21.06 支持model.xml代码段
+- 0.3  21.11 支持.layout.xml的按钮那列代码段

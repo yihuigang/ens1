@@ -1,0 +1,70 @@
+{
+    "model-column-decimal": {
+        "prefix": [
+            "decimal",
+            "数字"
+        ],
+        "body": [
+            "<decimal name=\"column\" verboseName=\"列说明\" decimalPlaces=\"6\" maxDigits=\"20\" />"
+        ],
+        "description": "数字类型列"
+    },
+    "model-column-bigint": {
+        "prefix": "bigint",
+        "body": [
+            "<bigInteger name=\"column\" verboseName=\"列说明\" />"
+        ],
+        "description": "长整类型列"
+    },
+    "model-column-string": {
+        "prefix": [
+            "string",
+            "字符串"
+        ],
+        "body": [
+            "<string name=\"column\" verboseName=\"列说明\" length=\"200\" /> "
+        ],
+        "description": "字符串类型列"
+    },
+    "model-column-foreignKey": {
+        "prefix": [
+            "fk",
+            "外键"
+        ],
+        "body": [
+            "<foreignKey name=\"column\" verboseName=\"列说明\" otherModel=\"model\" />"
+        ],
+        "description": "model外键"
+    },
+    "model-column-date": {
+        "prefix": [
+            "date",
+            "日期"
+        ],
+        "body": [
+            "<date name=\"column\" verboseName=\"列说明\" />"
+        ],
+        "description": "日期类型列"
+    },
+    "model-column-datetime": {
+        "prefix": [
+            "dt",
+            "时间"
+        ],
+        "body": [
+            "<dateTime name=\"column\" verboseName=\"列说明\" />"
+        ],
+        "description": "时间类型列"
+    },
+    "model-column-choice": {
+        "prefix": [
+            "choice",
+            "字典",
+            "选择"
+        ],
+        "body": [
+            "<choice name=\"column\" verboseName=\"列说明\" length=\"200\" choicesCategory=\"choices\" />"
+        ],
+        "description": "字典类型列"
+    }
+}

@@ -1,0 +1,196 @@
+{
+  "layout-button-import": {
+    "prefix": [
+      "import",
+      "导入"
+    ],
+    "body": [
+      "<button title=\"导入\" use=\"lw-button\" event=\"action\" action=\"adaptAction\" noSelection=\"true\" afterActionEvents=\"layout.refresh\" queryFields=\"code,action\" queryFieldsFrom=\"\\import_code,\\import_action\" permission=\"\">",
+      "   <form use=\"lw-form\">\n      <field name=\"file\" use=\"lw-upload-file\" title=\"Excel文件\" multiple=\"false\" ignoreNameCheck=\"true\" />\n   </form>",
+      "</lw-button>"
+    ],
+    "description": "导入按钮"
+  },
+  "layout-button-export": {
+    "prefix": [
+      "export",
+      "导出"
+    ],
+    "body": [
+      "<button title=\"导出\" titleCode=\"layout.export\" use=\"lw-button\" event=\"export\" action=\"export\" auxJs=\"new Object({ format: 'excel',title:'导出名称' })\"  permission=\"layout_search/export\"/>"
+    ],
+    "description": "导出按钮"
+  },
+  "layout-button-export-model": {
+    "prefix": "exportmodel",
+    "body": [
+      "<button title=\"导出模板\" use=\"lw-button\" event=\"export\" action=\"adaptExportTmp\" queryFields=\"code\" queryFieldsFrom=\"\\import_code\" permission=\"layout/action/exportTmp\" />"
+    ],
+    "description": "导出模板"
+  },
+  "layout-button-print": {
+    "prefix": "printbutton",
+    "body": [
+      "<button title=\"打印\" name=\"print_button_name\" use=\"lw-report-button\" reportOutputType=\"pdf\" reportDataUse=\"retrieve\" reportId=\"print_action\" reportName=\"打印名称\" permission=\" \"/>"
+    ],
+    "description": "打印"
+  },
+  "layout-button-new": {
+    "prefix": [
+      "newbutton",
+      "新增按钮"
+    ],
+    "body": [
+      "<button title=\"新增\" titleCode=\"layout.new\" event=\"new\" use=\"lw-button\" permission=\"**\" />"
+    ],
+    "description": "新增按钮"
+  },
+  "layout-button-save": {
+    "prefix": [
+      "savebutton",
+      "保存按钮"
+    ],
+    "body": [
+      "<button title=\"保存\" titleCode=\"layout.save\" event=\"save\" use=\"lw-button\" permission=\"**\" />"
+    ],
+    "description": "保存按钮"
+  },
+  "layout-button-delete": {
+    "prefix": [
+      "deletebutton",
+      "删除按钮"
+    ],
+    "body": [
+      "<button title=\"删除\" titleCode=\"layout.delete\" event=\"action\" action=\"delete\" use=\"lw-button\" enabledByStatus=\"edit\" permission=\"**\" afterActionEvents=\"layout_page.new\"/>"
+    ],
+    "description": "删除按钮"
+  },
+  "layout-button-url": {
+    "prefix": "urlbutton",
+    "body": [
+      " <button title=\"按钮标题\" use=\"lw-button\" url=\"/l/layout\" noSelection=\"true\" />"
+    ],
+    "description": "跳转界面按钮"
+  },
+  "layout-button-whilt": {
+    "prefix": "button",
+    "body": [
+      "<button title=\"按钮标题\" titleCode=\"titleCode\" event=\"action\" action=\"userAction\" use=\"lw-button\" enabledJs=\"$.status=='10'\" visibleByStatus=\"view,edit\" permission=\"layout_search/userAction\"/>"
+    ],
+    "description": "按钮"
+  },
+  "layout-button-group": {
+    "prefix": "buttongroup",
+    "body": [
+      "<button title=\"按钮组\" use=\"lw-button-group\" permission=\"\">",
+      "   <button title=\"子按钮\" use=\"lw-button-group-item\" event=\"action\" action=\"userAction\" use=\"lw-button\" enabledJs=\"$.status=='10'\" visibleByStatus=\"view,edit\" />",
+      "</button>"
+    ],
+    "description": "按钮组"
+  },
+  "layout-field-ignoreNameCheck": {
+    "prefix": "ignoreNameCheck",
+    "body": [
+      "ignoreNameCheck=\"true\" "
+    ],
+    "description": "字段忽略"
+  },
+  "layout-field-select-choice": {
+    "prefix": "selectpagechoice",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-select\" required=\"true\" colspan=\"6\" category=\"choice\" enabledJs=\"true\" />"
+    ],
+    "description": "page选择字典"
+  },
+  "layout-field-select-choice-list": {
+    "prefix": "selectlistchoice",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-list-select\" required=\"true\" width=\"180\" category=\"choice\"  enabledJs=\"true\" />"
+    ],
+    "description": "表格选择字典"
+  },
+  "layout-field-select": {
+    "prefix": "selectpage",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-select\" required=\"true\" colspan=\"6\" api=\"query/auto\" copyFrom=\"query_id,query_name\" copyTo=\"layout_id,layout_name\" selectionOnly=\"true\" enabledJs=\"true\" />"
+    ],
+    "description": "page选择"
+  },
+  "layout-field-select-list": {
+    "prefix": "selectlist",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-list-select\" required=\"true\" width=\"180\" api=\"query/auto\" copyFrom=\"query_id,query_name\" copyTo=\"layout_id,layout_name\" selectionOnly=\"true\" enabledJs=\"true\" />"
+    ],
+    "description": "表格选择"
+  },
+  "layout-field-label-list": {
+    "prefix": "label",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-list-label\" width=\"120\" />"
+    ],
+    "description": "表格标签列"
+  },
+  "layout-field-label-date-list": {
+    "prefix": "ldate",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-list-label\" width=\"120\" type=\"datetime\" format=\"yyyy-MM-dd HH:mm:ss\" />"
+    ],
+    "description": "表格标签时间列"
+  },
+  "layout-field-number": {
+    "prefix": "number",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-list-number\" colspan=\"8\" formatEnabled=\"true\" decimalScale=\"2\" thousandsGroupStyle=\"thousand\" enabledJs=\"true\" />"
+    ],
+    "description": "数字列"
+  },
+  "layout-field-number-list": {
+    "prefix": "numberlist",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-list-number\" width=\"120\" formatEnabled=\"true\" decimalScale=\"2\" thousandsGroupStyle=\"thousand\" enabledJs=\"true\" editable=\"false\" />"
+    ],
+    "description": "表格数字列"
+  },
+  "layout-field-month": {
+    "prefix": "month",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-date\" type=\"month\" format=\"yyyy-MM\" colspan=\"8\" />"
+    ],
+    "description": "月份列"
+  },
+  "layout-field-date": {
+    "prefix": "fdate",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-date\" type=\"date\" format=\"yyyy-MM-dd\" colspan=\"8\" />"
+    ],
+    "description": "月份列"
+  },
+  "layout-field-text": {
+    "prefix": "text",
+    "body": [
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-text\" enabled=\"true\" colspan=\"8\" />"
+    ],
+    "description": "文本列"
+  },
+  "layout-field-textarea": {
+    "prefix": "textarea",
+    "body": [
+      "<field name=\"remark\" title=\"备注\" use=\"lw-textarea\" enabled=\"true\" rows=\"3\" colspan=\"24\" />"
+    ],
+    "description": "文本多行"
+  },
+  "layout-field-file": {
+    "prefix": "file",
+    "body": [
+      "<field name=\"appendix\" title=\"附件\" use=\"lw-upload-file\" enabled=\"true\" colspan=\"8\" />"
+    ],
+    "description": "文本列"
+  },
+  "layout-panel": {
+    "prefix": "panel",
+    "body": [
+      "panel"
+    ],
+    "description": "面板"
+  }
+}

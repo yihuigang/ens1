@@ -10,6 +10,7 @@ exports.activate = function (context) {
     context.subscriptions.push(vscode.commands.registerCommand('extension.openUrl', function (uri) {
         vscode.window.showInformationMessage('openUrl' + uri.path);
         window.open("https://www.logwirecloud.com/cn/");
+        console.log("openUrl" + uri.path);
     }));
 };
 

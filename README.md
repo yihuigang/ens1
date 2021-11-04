@@ -1,8 +1,16 @@
 # 说明
 
-## 代码段
+## 基于logwire技术平台的代码段
+
+### 使用方法
+
+1.【扩展】->【从VSIX安装...】->选择插件文件
+
+2.js文件中支持js代码片段，xml文件支持model.xml,layout.xml代码段
 
 ### 支持代码段：
+
+#### 1.js
 
 query
 
@@ -31,6 +39,16 @@ tasks,计划任务
 redirect(指定跳转)
 
 log,rizhi(日志)
+
+#### 2.model
+
+#### 3.layout
+
+button
+
+field
+
+list
 
 ## 发布命令
 

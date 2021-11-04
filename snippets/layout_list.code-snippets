@@ -1,0 +1,32 @@
+{
+    "layout-list-item": {
+        "prefix": "listitem",
+        "body": [
+            "<div use=\"lw-row\">",
+            "   <list index=\"true\" multiple=\"true\" name=\"lines\" height=\"200\" use=\"lw-item-list\" title=\"明细\" addJs=\"true\" removeJs=\"true\">",
+            "       <field name=\"column\" title=\"列标题\" use=\"lw-list-label\" widht=\"120\" />",
+            "   </list>",
+            "</div>"
+        ],
+        "description": "子列表"
+    },
+    "layout-list": {
+        "prefix": "list",
+        "body": [
+            "<dataset name=\"dataset_name\" query=\"query_name\">",
+            "   <restriction column1.eq.1=\"!$$.page.id\"></restriction>",
+            "   <restriction column2.eq.2=\"!$$.page.id\"></restriction>",
+            "   <restriction sql=\"1 or 2\"></restriction>",
+            "</dataset>",
+            "<lw-form-card title=\"明细\" expand=\"true\" colspan=\"24\">",
+            "   <lw-inner-search name=\"search_name\" loadData=\"true\" query=\"query_name\" colspan=\"24\" dynamic=\"true\" aggregationText=\"合计：\" aggregationTextField=\"column1\" aggregationFields=\"column2||sum\">",
+            "      <lw-list-footer summary=\"all\" summaryTemplate=\"总计:${column2}\" summaryFields=\"column2\"/>",
+            "      <list name=\"list_name\" subDatasetName=\"dataset_name\" use=\"lw-list\" index=\"true\" multiple=\"true\" height=\"200\" showSummary=\"false\">",
+            "      </list>",
+            "      <paging use=\"lw-paging\"  pagingOptions=\"50,100,200\"/>",
+            "   </lw-inner-search>",
+            "</lw-form-card>"
+        ],
+        "description": "列表"
+    }
+}
