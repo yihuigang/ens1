@@ -1,0 +1,95 @@
+{
+  "js-actions": {
+    "prefix": "actions",
+    "body": [
+      "// action方法\nactions.actionExample = function ($, namespace, request, response) {",
+      "  var actionData = request.body;",
+      "  var rows = actionData.selectedRows;",
+      "  rows.forEach(function (row) {\n\n      });",
+      "  response.code = 'refresh';",
+      "  response.message = '操作完成';",
+      "}"
+    ],
+    "description": "action方法"
+  },
+  "js-actions-response-redirect": {
+    "prefix": [
+      "redirect",
+      "zhidingtiaoz"
+    ],
+    "body": [
+      "   var redirect = {path: '/l/layout'}",
+      "   response.code = 'redirect';",
+      "   response.data = redirect;",
+      "   response.message = '操作完成';"
+    ],
+    "description": "指定跳转"
+  },
+  "js-tasks": {
+    "prefix": [
+      "tasks",
+      "计划任务"
+    ],
+    "body": [
+      "// 计划任务\ntasks.taskFunction = function ($, taskContext) {",
+      "    var lockService = $.getLockService();",
+      "    var lock = lockService.getLock(taskContext.handlerName + \".lock\");",
+      "    var lockOn = lock.tryLock(1800, java.util.concurrent.TimeUnit.SECONDS);",
+      "    if (!lockOn) {\n        throw \"任务执行中,请等待任务执行完成！\";\n    }",
+      "    try {\n\n    } catch (e) {\n        throw e;\n    } finally {\n        lock.unlock();\n    }",
+      "};"
+    ],
+    "description": "计划任务方法"
+  },
+  "js-reports": {
+    "prefix": [
+      "report",
+      "报表打印"
+    ],
+    "body": [
+      "reports.reportFunction = function ($, actionData) {// 打印方法",
+      "   var rows = actionData.selectedRows",
+      "   var headList = common.arrayList();",
+      "   var paras = common.hashMap();",
+      "   var lineMap = common.hashMap();",
+      "   rows.forEach(function (row) {",
+      "   });",
+      "   var row=rows[0];",
+      "   headList.add(row);",
+      "   var head_id=row.id;",
+      "   var linelist = $.getQueryService().select(\"query_line\").eq(\"head_id\", row.id).findAll();//查询子表数据",
+      "   var dataSource = new ListMapDataSource(linelist);",
+      "   lineMap.put(head_id, dataSource);",
+      "   var paras = common.hashMap();",
+      "   paras.put(\"line_data_key\", lineMap);",
+      "   paras.put(\"line_jspaper_key\", $.getReportService().getJasperReport(\"line_jspaper_name\"));",
+      "   return new ReportData(\"head_jspaper_name\", headList, paras);",
+      "}"
+    ],
+    "description": "报表打印方法"
+  },
+  "js-event": {
+    "prefix": [
+      "event",
+      "事件"
+    ],
+    "body": [
+      "// 事件处理方法\neventHandlers.eventFunction = function ($, event) {",
+      "   var data = event.data.data;",
+      "   if(data.header!=null){",
+      "      data.header.settle_pay=data.header.pre_pay;\n}",
+      "   else{\n      data.settle_receive=data.pre_receive;\n   }\n}"
+    ],
+    "description": "事件处理方法"
+  },
+  "js-common": {
+    "prefix": [
+      "common",
+      "公共方法"
+    ],
+    "body": [
+      "// 公共方法\ncommon.commonFunction = function($,data){\n\n}"
+    ],
+    "description": "公共方法"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "layout-search": {
+    "prefix": [
+      "search",
+      "查询页面"
+    ],
+    "body": [
+      "search"
+    ],
+    "description": "查询页面"
+  },
+  "layout-page": {
+    "prefix": [
+      "page",
+      "详情页面"
+    ],
+    "body": [
+      "page"
+    ],
+    "description": "详情页面"
+  },
+  "layout-search-page": {
+    "prefix": [
+      "searchpage",
+      "manager",
+      "查询详情页面"
+    ],
+    "body": [
+      "<layout name=\"layout_manage\" title=\"查询详情页面\" use=\"lw-search-page-layout\">",
+      "   <layout name=\"search_name\" listAutoHeight=\"true\" title=\"查询\" use=\"lw-inner-search\" query=\"query_name\" keyFields=\"code,name\" colspan=\"12\" loadData=\"true\">",
+      "   </layout>",
+      "   <layout name=\"page_name\" title=\"详情\" use=\"lw-inner-page\" query=\"query_name\" colspan=\"12\">",
+      "   </layout>",
+      "</layout>"
+    ],
+    "description": "查询详情页面"
+  },
+  "layout-inner-search": {
+    "prefix": [
+      "innersearch",
+      "内部查询页面"
+    ],
+    "body": [
+      "search"
+    ],
+    "description": "内部查询页面"
+  },
+  "layout-inner-page": {
+    "prefix": [
+      "innerpage",
+      "内部详情页面"
+    ],
+    "body": [
+      "page"
+    ],
+    "description": "内部详情页面"
+  },
+  "layout-inner-dynamic": {
+    "prefix": [
+      "dynamic",
+      "动态页面"
+    ],
+    "body": [
+      "page"
+    ],
+    "description": "动态页面"
+  }
+
+  
+}

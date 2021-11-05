@@ -1,4 +1,42 @@
 {
+    "model": {
+        "prefix": [
+            "model"
+        ],
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>",
+            "<model xmlns=\"http://logwire.com/schema/model\" includeAuditFields=\"true\" includeDeletedField=\"true\" includeDomainField=\"true\" includeVersionField=\"true\" verboseName=\"参数管理表\" managed=\"true\">",
+            "   <fields>",
+            "      <auto name=\"id\" verboseName=\"id\"/>",
+            "      <string name=\"column\" verbosename=\"列说明\" length=\"100\" />",
+            "   </fields>",
+            "</model>"
+        ],
+        "description": "数字类型列"
+    },
+    "model-managed-false": {
+        "prefix": [
+            "model-managed-false"
+        ],
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>",
+            "<model xmlns=\"http://logwire.com/schema/model\" includeAuditFields=\"false\" includeDeletedField=\"false\" includeDomainField=\"false\" includeVersionField=\"false\" managed=\"false\" dbTable=\"table_name\">",
+            "   <fields>",
+            "   </fields>",
+            "</model>"
+        ],
+        "description": "数字类型列"
+    },
+    "model-column-auto": {
+        "prefix": [
+            "auto",
+            "自增列"
+        ],
+        "body": [
+            "<auto name=\"id\" verboseName=\"自增列主键\"/>",
+        ],
+        "description": "自增列"
+    },
     "model-column-decimal": {
         "prefix": [
             "decimal",
@@ -8,6 +46,17 @@
             "<decimal name=\"column\" verboseName=\"列说明\" decimalPlaces=\"6\" maxDigits=\"20\" />"
         ],
         "description": "数字类型列"
+    },
+    "model-column-int": {
+        "prefix": [
+            "int",
+            "integer",
+            "整数"
+        ],
+        "body": [
+            "<integer name=\"column\" verboseName=\"列说明\" />"
+        ],
+        "description": "整数类型列"
     },
     "model-column-bigint": {
         "prefix": "bigint",

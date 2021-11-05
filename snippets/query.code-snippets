@@ -1,0 +1,54 @@
+{
+    "query-column-string": {
+        "prefix": [
+            "string-query",
+            "字符串视图"
+        ],
+        "body": [
+            "<string name=\"column\" isExp=\"true\" dbColumn=\"sql\"/>"
+        ],
+        "description": "视图字符串类型列"
+    },
+    "query-column-integer": {
+        "prefix": [
+            "int-query",
+            "整数视图"
+        ],
+        "body": [
+            "<integer name=\"column\" isExp=\"true\" dbColumn=\"sql\"/>"
+        ],
+        "description": "视图整数类型列"
+    },
+    "query-column-join": {
+        "prefix": [
+            "join",
+            "关联"
+        ],
+        "body": [
+            "<join name=\"join_name\" model=\"model_name\" relation=\"other_join_name\" localKey=\"other_join_column\" referKey=\"join_column\" fetch=\"join_display_column1,join_display_column2\"/>"
+        ],
+        "description": "视图关联"
+    },
+    "query-column-item": {
+        "prefix": [
+            "item",
+            "子项"
+        ],
+        "body": [
+            "<item name=\"item_name\" model=\"model_name\" localKey=\"query_column\" referKey=\"item_column\" orderBy=\"item_column\" title=\"明细\">",
+            "   <join/>",
+            "</item>"
+        ],
+        "description": "子项"
+    },
+    "query-column-moreRelationKey": {
+        "prefix": [
+            "morerelation",
+            "其他关联条件"
+        ],
+        "body": [
+            "<moreRelationKey relation=\"other_join_name\" localKey=\"other_join_column\" referKey=\"join_column\" />"
+        ],
+        "description": "其他关联条件"
+    }
+}

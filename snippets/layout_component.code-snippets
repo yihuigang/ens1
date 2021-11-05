@@ -1,0 +1,17 @@
+{
+    "layout-free-div": {
+        "prefix": "searchform",
+        "body": [
+            "<lw-free-div use=\"lw-free-div\">",
+            "   <attribute name=\"tmplJs\">",
+            "     <![CDATA[",
+            "         var price = _.escape($$.bookQueryPage.price);",
+            "         var dom = \"<div>\" + price + \"</div>\";",
+            "         dom;",
+            "     ]]>",
+            "   </attribute>",
+            "</lw-free-div>"
+        ],
+        "description": "lw-free-div"
+    }
+}

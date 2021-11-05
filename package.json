@@ -2,11 +2,11 @@
     "name": "logwiresnip",
     "displayName": "logwire代码片段",
     "description": "logwire代码片段",
-    "version": "0.3.1",
+    "version": "0.3.3",
     "engines": {
         "vscode": "^1.61.0"
     },
-    "publisher":"yhg",
+    "publisher": "yhg",
     "categories": [
         "Snippets"
     ],
@@ -18,8 +18,12 @@
                 "path": "./snippets/js_snippets.code-snippets"
             },
             {
-                "language": "xml",
-                "path": "./snippets/xml_snippets.code-snippets"
+                "language": "javascript",
+                "path": "./snippets/js_database.code-snippets"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/js_function.code-snippets"
             },
             {
                 "language": "xml",
@@ -27,10 +31,25 @@
             },
             {
                 "language": "xml",
+                "path": "./snippets/query.code-snippets"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/layout.code-snippets"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/layout_button.code-snippets"
+            },
+            {
+                "language": "xml",
                 "path": "./snippets/layout_list.code-snippets"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/layout_container.code-snippets"
             }
         ],
-
         "commands": [
             {
                 "command": "extension.openUrl",

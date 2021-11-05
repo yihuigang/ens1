@@ -1,0 +1,65 @@
+{
+  "js-database-query-find": {
+    "prefix": "find",
+    "body": [
+      "$.queryService.select(\"query_name\").eq(\"column\", \"\").find(); // 查询数据"
+    ],
+    "description": "query查询单条"
+  },
+  "js-database-query-findAll": {
+    "prefix": ["findAll","select","query"],
+    "body": [
+      "$.queryService.select(\"query_name\").eq(\"column\", \"\").findAll(); // 查询数据"
+    ],
+    "description": "query查询多条"
+  },
+  "js-database-query-sql": {
+    "prefix": ["sql-query","select-sql"],
+    "body": [
+      "$.jdbcTemplate.queryForList(sql); // 查询数据"
+    ],
+    "description": "sql查询，直接使用sql查询，不受条数限制"
+  },
+  "js-database-insert": {
+    "prefix": "insert",
+    "body": [
+      "$.queryService.insert(\"model\",map); // 插入数据"
+    ],
+    "description": "插入数据"
+  },
+  "js-database-insert-batch": {
+    "prefix": "insert-batch",
+    "body": [
+      "$.queryService.batchInsert(\"model\", array);// 批量插入数据"
+    ],
+    "description": "批量插入数据"
+  },
+  "js-database-update-set": {
+    "prefix": "update",
+    "body": [
+      "$.queryService.createUpdate(\"model\").eq(\"column\", value).set(\"id\", id).update();// 更新数据"
+    ],
+    "description": "更新数据"
+  },
+  "js-database-update-row": {
+    "prefix": "update-row",
+    "body": [
+      "$.queryService.update(\"model\", row);// 更新整行数据"
+    ],
+    "description": "更新整行数据"
+  },
+  "js-database-update-batch": {
+    "prefix": "update-batch",
+    "body": [
+      "$.queryService.batchUpdate(\"model\", array, [\"column1\", \"column2\"]);// 批量更新数据"
+    ],
+    "description": "批量更新数据"
+  },
+  "js-database-delete": {
+    "prefix": "delete",
+    "body": [
+      "$.queryService.delete(\"model\").eq(\"column\", value).execute();// 删除"
+    ],
+    "description": "删除"
+  }
+}

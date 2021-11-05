@@ -22,14 +22,14 @@
     "description": "导出按钮"
   },
   "layout-button-export-model": {
-    "prefix": "exportmodel",
+    "prefix": "export-model",
     "body": [
       "<button title=\"导出模板\" use=\"lw-button\" event=\"export\" action=\"adaptExportTmp\" queryFields=\"code\" queryFieldsFrom=\"\\import_code\" permission=\"layout/action/exportTmp\" />"
     ],
     "description": "导出模板"
   },
   "layout-button-print": {
-    "prefix": "printbutton",
+    "prefix": "print-button",
     "body": [
       "<button title=\"打印\" name=\"print_button_name\" use=\"lw-report-button\" reportOutputType=\"pdf\" reportDataUse=\"retrieve\" reportId=\"print_action\" reportName=\"打印名称\" permission=\" \"/>"
     ],
@@ -186,11 +186,24 @@
     ],
     "description": "文本列"
   },
-  "layout-panel": {
-    "prefix": "panel",
+  "layout-field-insert": {
+    "prefix": "insert-column",
     "body": [
-      "panel"
+      "<field name=\"insert_user\" title=\"创建人\" titleCode=\"common.insert_user\" use=\"lw-text\" align=\"center\" width=\"120\" enabledJs=\"false\" />",
+      "<field name=\"insert_date\" title=\"创建时间\" titleCode=\"common.insert_date\" use=\"lw-date\" type=\"datetime\" formart=\"yyyy-mm-dd hh:mm:ss\" align=\"center\" colspan=\"8\" enabledJs=\"false\" />",
+      "<field name=\"update_user\" title=\"修改人\" titleCode=\"common.update_user\" use=\"lw-text\" align=\"center\" width=\"120\" enabledJs=\"false\" />",
+      "<field name=\"update_date\" title=\"修改时间\" titleCode=\"common.update_date\" use=\"lw-date\" type=\"datetime\" formart=\"yyyy-mm-dd hh:mm:ss\" align=\"center\" colspan=\"8\" enabledJs=\"false\" />"
     ],
-    "description": "面板"
+    "description": "创建和修改字段"
+  },
+  "layout-field-insert-list": {
+    "prefix": "insert-list",
+    "body": [
+      "<field name=\"insert_user\" title=\"创建人\" titleCode=\"common.insert_user\" use=\"lw-list-label\" align=\"center\" width=\"120\" />",
+      "<field name=\"insert_date\" title=\"创建时间\" titleCode=\"common.insert_date\" use=\"lw-list-label\" type=\"datetime\" formart=\"yyyy-mm-dd hh:mm:ss\" align=\"center\" width=\"140\" />",
+      "<field name=\"update_user\" title=\"修改人\" titleCode=\"common.update_user\" use=\"lw-list-label\" align=\"center\" width=\"120\" />",
+      "<field name=\"update_date\" title=\"修改时间\" titleCode=\"common.update_date\" use=\"lw-list-label\" type=\"datetime\" formart=\"yyyy-mm-dd hh:mm:ss\" align=\"center\" width=\"140\" />"
+    ],
+    "description": "创建和修改字段"
   }
 }
