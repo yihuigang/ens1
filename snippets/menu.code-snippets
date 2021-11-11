@@ -1,0 +1,14 @@
+{
+    "menu": {
+        "prefix": [
+            "menu",
+            "菜单"
+        ],
+        "body": [
+            "<menu title=\"菜单组名称\" icon=\"truck-moving\">",
+            "   <item title=\"菜单名称\" link=\"/l/item_search\"/>",
+            "</menu>"
+        ],
+        "description": "动态页面"
+    }
+}

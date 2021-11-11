@@ -66,7 +66,7 @@
     "description": "删除按钮"
   },
   "layout-button-url": {
-    "prefix": "urlbutton",
+    "prefix": "url-button",
     "body": [
       " <button title=\"按钮标题\" use=\"lw-button\" url=\"/l/layout\" noSelection=\"true\" />"
     ],
@@ -80,7 +80,7 @@
     "description": "按钮"
   },
   "layout-button-group": {
-    "prefix": "buttongroup",
+    "prefix": "button-group",
     "body": [
       "<button title=\"按钮组\" use=\"lw-button-group\" permission=\"\">",
       "   <button title=\"子按钮\" use=\"lw-button-group-item\" event=\"action\" action=\"userAction\" use=\"lw-button\" enabledJs=\"$.status=='10'\" visibleByStatus=\"view,edit\" />",
@@ -96,30 +96,30 @@
     "description": "字段忽略"
   },
   "layout-field-select-choice": {
-    "prefix": "selectpagechoice",
+    "prefix": "select-choice",
     "body": [
       "<field name=\"column\" title=\"字段标题\" use=\"lw-select\" required=\"true\" colspan=\"6\" category=\"choice\" enabledJs=\"true\" />"
     ],
     "description": "page选择字典"
   },
   "layout-field-select-choice-list": {
-    "prefix": "selectlistchoice",
+    "prefix": "select-choice-list",
     "body": [
       "<field name=\"column\" title=\"字段标题\" use=\"lw-list-select\" required=\"true\" width=\"180\" category=\"choice\"  enabledJs=\"true\" />"
     ],
     "description": "表格选择字典"
   },
   "layout-field-select": {
-    "prefix": "selectpage",
+    "prefix": "select-page",
     "body": [
-      "<field name=\"column\" title=\"字段标题\" use=\"lw-select\" required=\"true\" colspan=\"6\" api=\"query/auto\" copyFrom=\"query_id,query_name\" copyTo=\"layout_id,layout_name\" selectionOnly=\"true\" enabledJs=\"true\" />"
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-select\" required=\"true\" colspan=\"6\" api=\"query/auto\" template=\"${code!}-${name!}\" copyFrom=\"query_id,query_name\" copyTo=\"layout_id,layout_name\" matchFields=\"匹配字段\" valueField=\"值字段\" optionLabelField=\"显示字段\" selectionOnly=\"true\" enabledJs=\"true\" />"
     ],
     "description": "page选择"
   },
   "layout-field-select-list": {
-    "prefix": "selectlist",
+    "prefix": "select-list",
     "body": [
-      "<field name=\"column\" title=\"字段标题\" use=\"lw-list-select\" required=\"true\" width=\"180\" api=\"query/auto\" copyFrom=\"query_id,query_name\" copyTo=\"layout_id,layout_name\" selectionOnly=\"true\" enabledJs=\"true\" />"
+      "<field name=\"column\" title=\"字段标题\" use=\"lw-list-select\" required=\"true\" width=\"120\" api=\"query/auto\" template=\"${code!}-${name!}\" copyFrom=\"query_id,query_name\" copyTo=\"layout_id,layout_name\" matchFields=\"匹配字段\" valueField=\"值字段\" optionLabelField=\"显示字段\" selectionOnly=\"true\" enabledJs=\"true\" />"
     ],
     "description": "表格选择"
   },
@@ -131,7 +131,7 @@
     "description": "表格标签列"
   },
   "layout-field-label-date-list": {
-    "prefix": "ldate",
+    "prefix": "date-label-list",
     "body": [
       "<field name=\"column\" title=\"字段标题\" use=\"lw-list-label\" width=\"120\" type=\"datetime\" format=\"yyyy-MM-dd HH:mm:ss\" />"
     ],
@@ -145,7 +145,7 @@
     "description": "数字列"
   },
   "layout-field-number-list": {
-    "prefix": "numberlist",
+    "prefix": "number-list",
     "body": [
       "<field name=\"column\" title=\"字段标题\" use=\"lw-list-number\" width=\"120\" formatEnabled=\"true\" decimalScale=\"2\" thousandsGroupStyle=\"thousand\" enabledJs=\"true\" editable=\"false\" />"
     ],
@@ -159,7 +159,7 @@
     "description": "月份列"
   },
   "layout-field-date": {
-    "prefix": "fdate",
+    "prefix": "date-field",
     "body": [
       "<field name=\"column\" title=\"字段标题\" use=\"lw-date\" type=\"date\" format=\"yyyy-MM-dd\" colspan=\"8\" />"
     ],

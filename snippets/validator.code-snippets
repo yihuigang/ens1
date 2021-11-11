@@ -1,0 +1,14 @@
+{
+    "menu": {
+        "prefix": [
+            "validator",
+            "约束"
+        ],
+        "body": [
+            "<validators>",
+            "   <validator name=\"example_validators\" description=\"电话号码\" regex=\"^1[0-9]{10}$\" message=\"错误的电话号码格式\" messageCode=\"phone-number-mismatch\"/>",
+            "</validators>"
+        ],
+        "description": "输入约束"
+    }
+}

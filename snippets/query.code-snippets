@@ -1,4 +1,15 @@
 {
+    "query": {
+        "prefix": [
+            "query",
+            "视图"
+        ],
+        "body": [
+            "<query name=\"query_name\" model=\"model_name\" title=\"视图标题名称\" defaultValues=\"model1=value1,model2=value2\" sql=\"1=1\">",
+            "</query>"
+        ],
+        "description": "视图"
+    },
     "query-column-string": {
         "prefix": [
             "string-query",
@@ -51,4 +62,5 @@
         ],
         "description": "其他关联条件"
     }
+    // 分组
 }

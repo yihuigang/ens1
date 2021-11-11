@@ -7,14 +7,21 @@
     "description": "query查询单条"
   },
   "js-database-query-findAll": {
-    "prefix": ["findAll","select","query"],
+    "prefix": [
+      "findAll",
+      "select",
+      "query"
+    ],
     "body": [
       "$.queryService.select(\"query_name\").eq(\"column\", \"\").findAll(); // 查询数据"
     ],
     "description": "query查询多条"
   },
   "js-database-query-sql": {
-    "prefix": ["sql-query","select-sql"],
+    "prefix": [
+      "sql-query",
+      "select-sql"
+    ],
     "body": [
       "$.jdbcTemplate.queryForList(sql); // 查询数据"
     ],
@@ -61,5 +68,78 @@
       "$.queryService.delete(\"model\").eq(\"column\", value).execute();// 删除"
     ],
     "description": "删除"
+  },
+  "js-oracle-jar": {
+    "prefix": "jar-oracle",
+    "body": [
+      "// 执行oracle数据库操作相关的jar包",
+      "var CallableStatementCreator = Java.type('org.springframework.jdbc.core.CallableStatementCreator');",
+      "var CallableStatementCallback = Java.type('org.springframework.jdbc.core.CallableStatementCallback');",
+    ],
+    "description": "执行oracle数据库操作相关的jar包"
+  },
+  "js-oracle-function": {
+    "prefix": "function-oracle",
+    "body": [
+      "// 执行oracle函数",
+      "var result;",
+      "$.queryService.jdbcTemplate.execute(",
+      "   new CallableStatementCreator({",
+      "      createCallableStatement: function (con) {",
+      "          try {",
+      "              var cs = con.prepareCall('{?=call glogowner.OPPO_EXCHANGE_RATE(?,?,?,?,?)}');",
+      "              cs.registerOutParameter(1, \"3\"); //注册输出参数的类型,Types.DECIMAL=3",
+      "              cs.setString(2, str1);",
+      "              cs.setString(3, str2);",
+      "              return cs;",
+      "          } catch (e) {",
+      "              throw e;",
+      "          }",
+      "      }",
+      "   }),",
+      "   new CallableStatementCallback({",
+      "      doInCallableStatement: function (cs) {",
+      "         try {",
+      "            cs.execute();  // 执行函数",
+      "            result = cs.getBigDecimal(1);",
+      "            return result;",
+      "        } catch (e) {",
+      "            throw e;",
+      "        } finally {",
+      "            if (cs != null) cs.close();",
+      "        }",
+      "     }",
+      "  })",
+      ");",
+      "return result;"
+    ],
+    "description": "执行oracle函数"
+  },
+  "js-oracle-procedure": {
+    "prefix": "procedure-oracle",
+    "body": [
+      "// 执行oracle存储过程",
+      "$.queryService.jdbcTemplate.execute(",
+      "   new CallableStatementCreator({",
+      "      createCallableStatement: function(con) {",
+      "         try {",
+      "            var cs = con.prepareCall('{call pro(?,?)}')",
+      "            cs.setString(1, str1)",
+      "            cs.setString(2, str2)",
+      "            return cs",
+      "         }",
+      "         catch(e) {throw e;}",
+      "      }",
+      "   }),",
+      "   new CallableStatementCallback({",
+      "      doInCallableStatement: function(cs) {",
+      "         try {cs.execute();} // 执行存储过程",
+      "         catch(e) {throw e;}",
+      "         finally { if (cs != null) cs.close();}",
+      "      }",
+      "   });",
+      ");",
+    ],
+    "description": "执行oracle存储过程"
   }
 }

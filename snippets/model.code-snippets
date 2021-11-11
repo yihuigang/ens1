@@ -77,7 +77,7 @@
     },
     "model-column-foreignKey": {
         "prefix": [
-            "fk",
+            "fk","foreignkey",
             "外键"
         ],
         "body": [
@@ -115,5 +115,15 @@
             "<choice name=\"column\" verboseName=\"列说明\" length=\"200\" choicesCategory=\"choices\" />"
         ],
         "description": "字典类型列"
+    },
+    "model-column-remark": {
+        "prefix": [
+            "remark-model",
+            "备注列"
+        ],
+        "body": [
+            "<string name=\"remarks\" verboseName=\"备注\" length=\"1000\" /> "
+        ],
+        "description": "备注列"
     }
 }

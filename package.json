@@ -2,7 +2,8 @@
     "name": "logwiresnip",
     "displayName": "logwire代码片段",
     "description": "logwire代码片段",
-    "version": "0.3.3",
+    "version": "0.4.0",
+    "repository":"https://github.com/yihuigang/ens1.git",
     "engines": {
         "vscode": "^1.61.0"
     },
@@ -48,6 +49,14 @@
             {
                 "language": "xml",
                 "path": "./snippets/layout_container.code-snippets"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/menu.code-snippets"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/validator.code-snippets"
             }
         ],
         "commands": [
