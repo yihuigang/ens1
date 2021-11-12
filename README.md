@@ -1,6 +1,6 @@
 # 说明
 
-## 基于logwire技术平台的代码段
+本插件所包含的代码段基于logwire技术平台，主要内容是logwire二次开发中常用的代码以及针对一些特殊场景的代码写法。本插件的内容在不断完善中，欢迎使用者一起完善，github地址见文末。
 
 ### 使用方法
 
@@ -62,4 +62,6 @@ foreach循环、日志、
 
 2.cmd打包发布：vsce package
 
-**更多visual studio code插件开发信息，请点击https://code.visualstudio.com/api**
+**控件Github地址:*[https://github.com/yihuigang/ens1]()***
+
+**更多visual studio code插件开发信息，请点击***[**https://code.visualstudio.com/api**]()*
