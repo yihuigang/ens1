@@ -6,9 +6,11 @@
 
 1.【扩展】->【从VSIX安装...】->选择插件文件
 
-2.js文件中支持js代码片段，xml文件支持model.xml,layout.xml代码段
+2.js文件：支持js代码片段；
 
-快捷字段设置原则：从小到大原则。即代码段所表示的功能在字段前，例如数字列控件有两种:lw-number和lw-list-number,layout文件输入number，将有number和number-list可选，根据后缀，选择需要使用哪个代码段。
+3.xml文件：支持model.xml,layout.xml代码段
+
+快捷字段设置原则：从小到大原则，从功能到分类原则。即代码段所表示的功能在前，例如数字列控件有两种:lw-number和lw-list-number，在layout.zml文件输入number时，将有number和number-list可选，number表示功能，此时有多重number，在根据后缀，选择本次需要使用哪个代码段。
 
 ### 支持代码段：
 
@@ -24,7 +26,7 @@ Actions、tasks计划任务、redirect(指定跳转)、事件、公共方法、�
 
 **其他片段：**
 
-foreach循环、日志、
+foreach循环、日志……
 
 #### 2.model
 
@@ -42,7 +44,7 @@ foreach循环、日志、
 
 **容器相关代码片段：**
 
-面板、分组、左右分页、分隔条、tabs...
+面板、分组、左右分页、分隔条、tabs……
 
 **控件相关代码片段：**
 
@@ -62,6 +64,6 @@ foreach循环、日志、
 
 2.cmd打包发布：vsce package
 
-**控件Github地址:*[https://github.com/yihuigang/ens1]()***
+**控件Github地址：*[https://github.com/yihuigang/ens1]()***
 
-**更多visual studio code插件开发信息，请点击***[**https://code.visualstudio.com/api**]()*
+**更多visual studio code插件开发信息，请点击：**[**https://code.visualstudio.com/api**]()
