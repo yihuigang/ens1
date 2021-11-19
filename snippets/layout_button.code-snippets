@@ -123,6 +123,26 @@
     ],
     "description": "表格选择"
   },
+  "layout-field-select-masterfilter": {
+    "prefix": "select-masterfilter",
+    "body": [
+      "<attribute name=\"masterFilter\">",
+      "  <![CDATA[",
+      "    <%",
+      "       var masterFilter = {};",
+      "       masterFilter.logic = \"1 and (2 or 3)\";",
+      "       masterFilter.restrictions=[",
+      "         {\"num\":1, \"name\":\"approved\", \"restriction\":\"eq\", \"value\":true},",
+      "         {\"num\":2, \"name\":\"country\", \"restriction\":\"notnull\"},",
+      "         {\"num\":3, \"name\":\"gender\", \"restriction\":\"eq\", \"value\":\"M\"}",
+      "       ];",
+      "       return masterFilter;",
+      "    %>",
+      "  ]]>",
+      "</attribute>"
+    ],
+    "description": "lw-select控件过滤条件"
+  },
   "layout-field-label-list": {
     "prefix": "label",
     "body": [

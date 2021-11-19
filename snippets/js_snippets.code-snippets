@@ -34,6 +34,17 @@
       "common.getLogger(\"***日志示例***\").info(\"msg\");"
     ],
     "description": "日志"
-  }
+  },
+  "js-array": {
+    "prefix": "array",
+    "body": [
+      "var array = common.arrayList();",
+      "rows.forEach(function (row) {",
+      "   var map = common.hashMap();",
+      "   array.add(map);",
+      "});"
+    ],
+    "description": "批量更新数据"
+  },
   // 独立任务
 }
