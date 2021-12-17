@@ -6,6 +6,13 @@
     ],
     "description": "query查询单条"
   },
+  "js-database-query-find-limit": {
+    "prefix": "find-limit",
+    "body": [
+      "$.queryService.select(\"query_name\").eq(\"column\", \"\").find(0,200); // 查询指定行数数据"
+    ],
+    "description": "query查询指定行数数据"
+  },
   "js-database-query-findAll": {
     "prefix": [
       "findAll",
@@ -16,6 +23,17 @@
       "$.queryService.select(\"query_name\").eq(\"column\", \"\").findAll(); // 查询数据"
     ],
     "description": "query查询多条"
+  },
+  "js-database-query-findAll-column": {
+    "prefix": [
+      "findAll-column",
+      "select-column",
+      "query-column"
+    ],
+    "body": [
+      "$.queryService.select(\"query_name\").eq(\"column\", \"\").findAll(\"column1\",\"column2\"); // 查询数据"
+    ],
+    "description": "query查询多条指定列"
   },
   "js-database-query-sql": {
     "prefix": [

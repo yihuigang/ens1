@@ -44,6 +44,7 @@
   "js-reports": {
     "prefix": [
       "report",
+      "print",
       "报表打印"
     ],
     "body": [
@@ -114,7 +115,79 @@
     "description": "外部调用本接口"
   },
   // 导入
+  "js-function-import": {
+    "prefix": [
+      "import_function",
+      "导入方法"
+    ],
+    "body": [
+      "// 导入方法示例",
+      "var ReportData = Java.type(\"logwire.core.meta.report.ReportData\");",
+      "var Maps = Java.type(\"com.google.common.collect.Maps\");",
+      "var Lists = Java.type(\"com.google.common.collect.Lists\");",
+      "var ListMapDataSource = Java.type(\"logwire.web.service.report.ListMapDataSource\");",
+      "actions.importExample = function ($, namespace, request, response) {",
+      "  var rows = request.body.selectedRows;//获取从excel导入的数据",
+      "  var pageRows = request.body.aux.selectRows;//获取从页面的数据",
+      "  var failCount = 0; //失败数量",
+      "  var errorMsg = \"\"; //错误信息，将所有错误提示归集到一条信息显示给用户",
+      "  var pageRow = pageRows[0];",
+      "  rows.forEach(function (row) {",
+      "    var rowNew = common.hashMap();",
+      "    $.queryService.insert(\"model_name\", rowNew);",
+      "  });",
+      "  if (failCount > 0) {",
+      "    response.message = \"导入完成，共\" + rows.length + \"条，失败\" + failCount + \"条。<br/>失败详细信息：\" + errorMsg;",
+      "  }",
+      "  else {",
+      "    response.message = \"导入完成，共\" + rows.length + \"条。\";",
+      "  }",
+      "}"
+    ],
+    "description": "自定义导入方法"
+  },
   // 导出
+  "js-function-export": {
+    "prefix": [
+      "export_function",
+      "导出方法"
+    ],
+    "body": [
+      "// 自定义导出方法示例",
+      "// 导出自定义写法，lw-button控件属性配置如下：event=\"servlet-action\" action=\"export_action\"",
+      "servletActions.export_action = function ($, namespace, request, response) {",
+      "  var queryName = namespace;",
+      "  var actionData = request.body;",
+      "  var rows = actionData.selectedRows;// 取页面数据",
+      "  var listrows = common.arrayList();// 存储需要打印的数据",
+      "  // 遍历头表数据，通过头表的ID，获取所有头表的明细，并打印出来",
+      "  rows.forEach(function (row) {// 循环遍历",
+      "      var lines = $.queryService.select(\"model_line\").eq(\"head_id\", row.id).findAll(); // 查询明细数据",
+      "      lines.forEach(function (line) {",
+      "          listrows.add(line);// 将每条明细数据，存储在需要打印的list中",
+      "      });",
+      "  });",
+      "  actionData.selectedRows = listrows;// 设置请求数据为需要打印的数据",
+      "  var auxData = common.hashMap();",
+      "  auxData.put(\"code\", \"export_line\");// 配置数据规则转换代码（导出规则）",
+      "  request.body.aux = auxData;",
+      "  rows = listrows;",
+      "  var ResponseData = Java.type(\"logwire.web.service.ResponseData\");// 响应类实例化",
+      "  var responseData = new ResponseData();// 定义响应变量",
+      "  responseData.setResponse(response);// 设置响应参数",
+      "  request.body.selectedForm = null;",
+      "  // 参数解释：",
+      "  // model_line/model名称",
+      "  // adaptExport：固定写法，表示执行的action类型",
+      "  // request：固定写法，表示请求数据",
+      "  // responseData：固定写法，表示响应数据",
+      "  $.action(\"model_line\", \"adaptExport\", request, responseData);",
+      "  response.code = \"none\";",
+      "  response.message = \"导出成功\";",
+      "}"
+    ],
+    "description": "自定义导出方法"
+  },
   // 加载
   // 工作流获取用户方法示例
   "js-approve-getusers": {

@@ -1,15 +1,28 @@
 {
-  "layout-button-import": {
+  "layout-button-import-action": {
     "prefix": [
+      "import_action",
       "import",
       "导入"
     ],
     "body": [
       "<button title=\"导入\" use=\"lw-button\" event=\"action\" action=\"adaptAction\" noSelection=\"true\" afterActionEvents=\"layout.refresh\" queryFields=\"code,action\" queryFieldsFrom=\"\\import_code,\\import_action\" permission=\"\">",
       "   <form use=\"lw-form\">\n      <field name=\"file\" use=\"lw-upload-file\" title=\"Excel文件\" multiple=\"false\" ignoreNameCheck=\"true\" />\n   </form>",
-      "</lw-button>"
+      "</button>"
     ],
-    "description": "导入按钮"
+    "description": "导入按钮自定义方法"
+  },
+  "layout-button-import-save": {
+    "prefix": [
+      "import_save",
+      "导入"
+    ],
+    "body": [
+      "<button title=\"导入\" use=\"lw-button\" event=\"action\" action=\"adaptSave\" noSelection=\"true\" afterActionEvents=\"layout.refresh\" queryFields=\"code\" queryFieldsFrom=\"\\import_code\" permission=\"\">",
+      "   <form use=\"lw-form\">\n      <field name=\"file\" use=\"lw-upload-file\" title=\"Excel文件\" multiple=\"false\" ignoreNameCheck=\"true\" />\n   </form>",
+      "</button>"
+    ],
+    "description": "导入按钮保存"
   },
   "layout-button-export": {
     "prefix": [
@@ -87,6 +100,14 @@
       "</button>"
     ],
     "description": "按钮组"
+  },
+  "layout-button-click": {
+    "prefix": "click-button",
+    "body": [
+      "<button title=\"触发按钮\" event=\"save\" use=\"lw-button\" enabledJs=\"true\" checkRequired=\"false\" afterActionEvents=\"this_page.refresh,btn_click.click\"/>",
+      "<button title=\"影藏按钮\" name=\"btn_click\" event=\"action\" action=\"userAction\" use=\"lw-button\" enabledJs=\"true\" showJs=\"false\" afterActionEvents=\"this_page.refresh\"/>"
+    ],
+    "description": "按钮触发其他按钮"
   },
   "layout-field-ignoreNameCheck": {
     "prefix": "ignoreNameCheck",
@@ -204,14 +225,14 @@
     "body": [
       "<field name=\"appendix\" title=\"附件\" use=\"lw-upload-file\" enabled=\"true\" colspan=\"8\" />"
     ],
-    "description": "文本列"
+    "description": "附件"
   },
   "layout-field-insert": {
     "prefix": "insert-column",
     "body": [
-      "<field name=\"insert_user\" title=\"创建人\" titleCode=\"common.insert_user\" use=\"lw-text\" align=\"center\" width=\"120\" enabledJs=\"false\" />",
+      "<field name=\"insert_user\" title=\"创建人\" titleCode=\"common.insert_user\" use=\"lw-text\" align=\"center\" colspan=\"8\" enabledJs=\"false\" />",
       "<field name=\"insert_date\" title=\"创建时间\" titleCode=\"common.insert_date\" use=\"lw-date\" type=\"datetime\" formart=\"yyyy-mm-dd hh:mm:ss\" align=\"center\" colspan=\"8\" enabledJs=\"false\" />",
-      "<field name=\"update_user\" title=\"修改人\" titleCode=\"common.update_user\" use=\"lw-text\" align=\"center\" width=\"120\" enabledJs=\"false\" />",
+      "<field name=\"update_user\" title=\"修改人\" titleCode=\"common.update_user\" use=\"lw-text\" align=\"center\" colspan=\"8\" enabledJs=\"false\" />",
       "<field name=\"update_date\" title=\"修改时间\" titleCode=\"common.update_date\" use=\"lw-date\" type=\"datetime\" formart=\"yyyy-mm-dd hh:mm:ss\" align=\"center\" colspan=\"8\" enabledJs=\"false\" />"
     ],
     "description": "创建和修改字段"

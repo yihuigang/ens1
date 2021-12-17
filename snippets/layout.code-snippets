@@ -5,7 +5,18 @@
       "查询页面"
     ],
     "body": [
-      "search"
+      "<layout name=\"search_name\" titleCode=\"titleCode\" title=\"title\" use=\"lw-search-layout\" query=\"query_name\" listAutoHeight=\"true\" pageLayout=\"page_name\" keyFields=\"\" loadData=\"true\">",
+      "   <dataset name=\"search_name\" query=\"query_name\">",
+      "      <restriction column_name.eq.1=\"\\1\" />",
+      "      <restriction sql=\"1 \" />",
+      "   </dataset>",
+      "   <toolbar use=\"lw-search-form\">",
+      "      <button filter=\"NewButton\" />",
+      "   </toolbar>",
+      "   <list use=\"lw-list\" index=\"true\" editColumn=\"true\" multiple=\"true\" viewColumn=\"false\">",
+      "      <field name=\"column_name\" title=\"列名\" use=\"lw-list-label\" width=\"120\"/>",
+      "   </list>",
+      "</layout>"
     ],
     "description": "查询页面"
   },
@@ -15,7 +26,24 @@
       "详情页面"
     ],
     "body": [
-      "page"
+      "<layout name=\"page_name\" titleCode=\"详情\" title=\"详情\" use=\"lw-page-layout\" query=\"query_name\" searchLayout=\"search_name\">",
+      "   <lw-page-toolbar showEditButtons=\"false\">",
+      "      <button filter=\"NewButton\" />",
+      "      <button filter=\"SaveButton\" checkRequired=\"true\" enabledJs=\"true\"/>",
+      "      <button filter=\"DeleteButton\" confirmMessage=\"是否确定删除此报价？\" enabledJs=\"true\"/>",
+      "   </lw-page-toolbar>",
+      "   <dataset name=\"page_name\">",
+      "      <default colume1=\"\\1\" />",
+      "   </dataset>",
+      "   <form use=\"lw-form\">",
+      "      <field name=\"column_name\" title=\"列名\" use=\"lw-text\" colspan=\"6\" enabledJs=\"true\" />",
+      "   </form>",
+      "   <div use=\"lw-tabs\">",
+      "      <list index=\"true\" multiple=\"true\" name=\"lines\" height=\"200\" use=\"lw-item-list\" title=\"明细\" addJs=\"true\" removeJs=\"true\">",
+      "         <field name=\"remark\" title=\"备注\" use=\"lw-list-text\" widht=\"120\" />",
+      "      </list>",
+      "   </div>",
+      "</layout>"
     ],
     "description": "详情页面"
   },
@@ -65,6 +93,4 @@
     ],
     "description": "动态页面"
   }
-
-  
 }
