@@ -97,6 +97,7 @@
   "js-interface-callin": {
     "prefix": [
       "callin",
+      "interface-callin",
       "外部调用本接口"
     ],
     "body": [

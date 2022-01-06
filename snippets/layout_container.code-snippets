@@ -56,7 +56,7 @@
     "description": "lw-group-box"
   },
   "layout-left-right": {
-    "prefix": "groupbox",
+    "prefix": "left-right",
     "body": [
       "<lw-left-right leftPercent=\"50%\">",
       "   <layout name=\"search_name\" listAutoHeight=\"true\" title=\"查询\" use=\"lw-inner-search\" query=\"query_name\" keyFields=\"code,name\" colspan=\"12\" loadData=\"true\">",
@@ -65,14 +65,14 @@
       "   </layout>",
       "</lw-left-right>"
     ],
-    "description": "lw-left-right"
+    "description": "左右分屏控件"
   },
   "layout-splitter": {
     "prefix": "splitter",
     "body": [
       "lw-splitter"
     ],
-    "description": "lw-splitter"
+    "description": "分割控件"
   },
   "layout-tabs": {
     "prefix": "tabs",
