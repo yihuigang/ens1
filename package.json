@@ -1,7 +1,7 @@
 {
-    "name": "logwiresnip",
-    "displayName": "logwire代码片段",
-    "description": "logwire代码片段",
+    "name": "lwsnip",
+    "displayName": "lw代码片段",
+    "description": "lw代码片段",
     "version": "0.4.1",
     "repository":"https://github.com/yihuigang/ens1.git",
     "engines": {
@@ -11,7 +11,7 @@
     "categories": [
         "Snippets"
     ],
-    "icon": "images/icon2.png",
+    "icon": "images/icon.png",
     "contributes": {
         "snippets": [
             {

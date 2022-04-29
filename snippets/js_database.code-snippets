@@ -62,7 +62,7 @@
   "js-database-update-set": {
     "prefix": "update",
     "body": [
-      "$.queryService.createUpdate(\"model\").eq(\"column\", value).set(\"id\", id).update();// 更新数据"
+      "$.queryService.createUpdate(\"model\").set(\"column\", value).eq(\"id\", id).update();// 更新数据"
     ],
     "description": "更新数据"
   },
