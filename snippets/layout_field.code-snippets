@@ -92,7 +92,7 @@
   "layout-field-date": {
     "prefix": "date-field",
     "body": [
-      "<field se=\"lw-date\" name=\"column\" title=\"字段标题\" utype=\"date\" format=\"yyyy-MM-dd\" colspan=\"8\" />"
+      "<field use=\"lw-date\" name=\"column\" title=\"字段标题\" utype=\"date\" format=\"yyyy-MM-dd\" colspan=\"8\" />"
     ],
     "description": "月份列"
   },
