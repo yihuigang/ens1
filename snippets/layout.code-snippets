@@ -69,7 +69,14 @@
       "内部查询页面"
     ],
     "body": [
-      "search"
+      "<layout name=\"layout_name\" title=\"内部查询\" titleCode=\"layout.layout_name\" use=\"lw-inner-search\" loadData=\"true\" query=\"eu_import_line_query\" keyFields=\"id\" relationField=\"head_id\" tabClickEvent=\"layout_name.refresh\">",
+      "    <toolbar use=\"lw-search-form\" queryFieldsFromLayout=\"true\">",
+      "        <button title=\"导出\" titleCode=\"layout.export\" event=\"export\" action=\"export\" use=\"lw-button\" auxJs=\"new Object({format:'excelx'})\"/>    </toolbar>",
+      "    <list use=\"lw-list\" index=\"true\" editColumn=\"false\" height=\"550\" multiple=\"true\" viewColumn=\"false\" deleteColumn=\"false\">",
+      "        <field use=\"lw-list-label\" name=\"column_name\" title=\"列名\" titleCode=\"layout.layout_name.column_name\" width=\"100\"/>",
+      "    </list>",
+      "    <paging use=\"lw-paging\" pagingOptions=\"25,50,100,200,500\"/>",
+      "</layout>"
     ],
     "description": "内部查询页面"
   },
