@@ -2,7 +2,7 @@
     "name": "lwsnip",
     "displayName": "lw代码片段",
     "description": "lw代码片段",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "repository":"https://github.com/yihuigang/ens1.git",
     "engines": {
         "vscode": "^1.61.0"
@@ -66,7 +66,7 @@
         "commands": [
             {
                 "command": "extension.openUrl",
-                "title": "运匠",
+                "title": "logwire Snip",
                 "path": "./src/extension.js"
             }
         ],

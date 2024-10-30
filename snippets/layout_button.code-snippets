@@ -92,6 +92,46 @@
     ],
     "description": "按钮"
   },
+
+  "layout-button-list": {
+    "prefix": "button-list2",
+    "body": [
+      "<button title=\"按钮\" use=\"lw-list-button\" url=\"inner_search or page/edit\" fixed=\"right\" queryFields=\"id,type\" queryFieldsFrom=\"bill_no,\\type\" width=\"90\" />"
+    ],
+    "description": "表格按钮"
+  },
+
+  "layout-button-list2": {
+    "prefix": "button-list2",
+    "body": [
+      "<button title=\"编辑\" use=\"lw-list-button\" fixed=\"right\" queryFields=\"id\" queryFieldsFrom=\"id\" width=\"40\" permission = \"search_layout/action/listEditColumn\">",
+      "<attribute name=\"url\">",
+      "<![CDATA[/l/other_search_layout.head_id-<%=$.id%>/edit]]> </attribute> </button>"
+    ],
+    "description": "表格按钮2"
+  },
+
+  "layout-link-list": {
+    "prefix": "link-list",
+    "body": [
+      "<lw-list-link name=\"id\" title=\"编辑\" width=\"60\" url=\"#\">",
+      "    <attribute name=\"url\" >",
+      "    <![CDATA[",
+      "        <%",
+      "            var url = \"\";",
+      "            if('rate_settle_line_buy_search_new4' == $.bill_layout__buy_url){",
+      "                url= window.location.href.split(\"#\")[0] + \"#/l/rate_settle_buy_page_temp1/edit?id=\" + $.id;",
+      "            }else{",
+      "                url= window.location.href.split(\"#\")[0] + \"#/l/rate_settle_buy_page_temp/edit?id=\" + $.id;",
+      "            }",
+      "            return url;",
+      "        %>",
+      "    ]]>",
+      "    </attribute>",
+      "</lw-list-link>"
+    ],
+    "description": "表格链接"
+  },
   "layout-button-group": {
     "prefix": "button-group",
     "body": [

@@ -117,6 +117,13 @@
     ],
     "description": "附件"
   },
+  "layout-field-file-list": {
+    "prefix": "filelist",
+    "body": [
+      "<field use=\"lw-list-upload-file\" name=\"appendix\" title=\"附件\" enabled=\"true\" width=\"300\" />"
+    ],
+    "description": "表格附件"
+  },
   "layout-field-insert": {
     "prefix": "insert-column",
     "body": [
@@ -135,6 +142,6 @@
       "<field use=\"lw-list-label\" name=\"update_user\" title=\"修改人\" titleCode=\"common.update_user\" align=\"center\" width=\"120\" />",
       "<field use=\"lw-list-label\" name=\"update_date\" title=\"修改时间\" titleCode=\"common.update_date\" type=\"datetime\" formart=\"yyyy-mm-dd hh:mm:ss\" align=\"center\" width=\"140\" />"
     ],
-    "description": "创建和修改字段"
+    "description": "表格创建和修改字段"
   }
 }

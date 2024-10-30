@@ -80,6 +80,23 @@
     ],
     "description": "内部查询页面"
   },
+  "layout-inner-search-relationff": {
+    "prefix": [
+      "innersearch-relation",
+      "内部查询页面"
+    ],
+    "body": [
+      "<attribute name=\"relationFieldFromJs\">",
+      "    <![CDATA[",
+      "        var a = -1",
+      "        a = window.location.href;",
+      "        a = a.split(\"=\")[a.split('=').length - 1];",
+      "        a",
+      "    ]]>",
+      "</attribute>"
+    ],
+    "description": "内部查询页面关联字段值"
+  },
   "layout-inner-page": {
     "prefix": [
       "innerpage",
